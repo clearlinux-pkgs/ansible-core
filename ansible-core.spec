@@ -4,7 +4,7 @@
 #
 Name     : ansible-core
 Version  : 2.11.5
-Release  : 1
+Release  : 2
 URL      : https://github.com/ansible/ansible/archive/v2.11.5/ansible-2.11.5.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.11.5/ansible-2.11.5.tar.gz
 Summary  : Radically simple IT automation
@@ -18,12 +18,14 @@ Requires: Jinja2
 Requires: PyYAML
 Requires: cryptography
 Requires: packaging
+Requires: resolvelib
 BuildRequires : Jinja2
 BuildRequires : PyYAML
 BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-golang
 BuildRequires : cryptography
 BuildRequires : packaging
+BuildRequires : resolvelib
 
 %description
 |PyPI version| |Docs badge| |Chat badge| |Build Status| |Code Of Conduct| |Mailing Lists| |License| |CII Best Practices|
@@ -78,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631582567
+export SOURCE_DATE_EPOCH=1631643325
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
