@@ -4,7 +4,7 @@
 #
 Name     : ansible-core
 Version  : 2.11.6
-Release  : 10
+Release  : 11
 URL      : https://github.com/ansible/ansible/archive/v2.11.6/ansible-2.11.6.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.11.6/ansible-2.11.6.tar.gz
 Summary  : Radically simple IT automation
@@ -80,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635702933
+export SOURCE_DATE_EPOCH=1636417883
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -90,6 +90,7 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . resolvelib
 python3 setup.py build
 
 %install
@@ -102,6 +103,7 @@ cp %{_builddir}/ansible-2.11.6/licenses/MIT-license.txt %{buildroot}/usr/share/p
 cp %{_builddir}/ansible-2.11.6/licenses/PSF-license.txt %{buildroot}/usr/share/package-licenses/ansible-core/7b14725671bae6dc04be2b87de58131f0614dfad
 cp %{_builddir}/ansible-2.11.6/packaging/debian/copyright %{buildroot}/usr/share/package-licenses/ansible-core/b7f3dc6d692392795202ab560c7583e986d8352b
 python3 -tt setup.py build  install --root=%{buildroot}
+pypi-dep-fix.py %{buildroot} resolvelib
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
