@@ -4,7 +4,7 @@
 #
 Name     : ansible-core
 Version  : 2.12.0
-Release  : 13
+Release  : 14
 URL      : https://github.com/ansible/ansible/archive/v2.12.0/ansible-2.12.0.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.12.0/ansible-2.12.0.tar.gz
 Summary  : Radically simple IT automation
@@ -14,18 +14,13 @@ Requires: ansible-core-bin = %{version}-%{release}
 Requires: ansible-core-license = %{version}-%{release}
 Requires: ansible-core-python = %{version}-%{release}
 Requires: ansible-core-python3 = %{version}-%{release}
-Requires: Jinja2
-Requires: PyYAML
-Requires: cryptography
-Requires: packaging
-Requires: resolvelib
-BuildRequires : Jinja2
-BuildRequires : PyYAML
 BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-golang
-BuildRequires : cryptography
-BuildRequires : packaging
-BuildRequires : resolvelib
+BuildRequires : pypi(cryptography)
+BuildRequires : pypi(jinja2)
+BuildRequires : pypi(packaging)
+BuildRequires : pypi(pyyaml)
+BuildRequires : pypi(resolvelib)
 
 %description
 |PyPI version| |Docs badge| |Chat badge| |Build Status| |Code Of Conduct| |Mailing Lists| |License| |CII Best Practices|
@@ -80,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636483440
+export SOURCE_DATE_EPOCH=1641680270
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
