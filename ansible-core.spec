@@ -4,7 +4,7 @@
 #
 Name     : ansible-core
 Version  : 2.12.3
-Release  : 16
+Release  : 17
 URL      : https://github.com/ansible/ansible/archive/v2.12.3/ansible-2.12.3.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.12.3/ansible-2.12.3.tar.gz
 Summary  : Radically simple IT automation
@@ -15,7 +15,6 @@ Requires: ansible-core-license = %{version}-%{release}
 Requires: ansible-core-python = %{version}-%{release}
 Requires: ansible-core-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : buildreq-golang
 BuildRequires : pypi(cryptography)
 BuildRequires : pypi(jinja2)
 BuildRequires : pypi(packaging)
@@ -75,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646096301
+export SOURCE_DATE_EPOCH=1647629223
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
