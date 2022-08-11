@@ -4,7 +4,7 @@
 #
 Name     : ansible-core
 Version  : 2.13.2
-Release  : 23
+Release  : 24
 URL      : https://github.com/ansible/ansible/archive/v2.13.2/ansible-2.13.2.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.13.2/ansible-2.13.2.tar.gz
 Summary  : Radically simple IT automation
