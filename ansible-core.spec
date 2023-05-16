@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : ansible-core
-Version  : 2.14.5
-Release  : 37
-URL      : https://github.com/ansible/ansible/archive/v2.14.5/ansible-2.14.5.tar.gz
-Source0  : https://github.com/ansible/ansible/archive/v2.14.5/ansible-2.14.5.tar.gz
+Version  : 2.15.0
+Release  : 38
+URL      : https://github.com/ansible/ansible/archive/v2.15.0/ansible-2.15.0.tar.gz
+Source0  : https://github.com/ansible/ansible/archive/v2.15.0/ansible-2.15.0.tar.gz
 Summary  : Radically simple IT automation
 Group    : Development/Tools
 License  : Apache-2.0 GPL-3.0 MIT Python-2.0
@@ -22,6 +22,7 @@ BuildRequires : pypi(jinja2)
 BuildRequires : pypi(packaging)
 BuildRequires : pypi(pyyaml)
 BuildRequires : pypi(resolvelib)
+BuildRequires : pypi(setuptools)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -71,10 +72,10 @@ python3 components for the ansible-core package.
 
 
 %prep
-%setup -q -n ansible-2.14.5
-cd %{_builddir}/ansible-2.14.5
+%setup -q -n ansible-2.15.0
+cd %{_builddir}/ansible-2.15.0
 pushd ..
-cp -a ansible-2.14.5 buildavx2
+cp -a ansible-2.15.0 buildavx2
 popd
 
 %build
@@ -82,15 +83,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682432036
+export SOURCE_DATE_EPOCH=1684245844
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . resolvelib
 python3 -m build --wheel --skip-dependency-check --no-isolation
