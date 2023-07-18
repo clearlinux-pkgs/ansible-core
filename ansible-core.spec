@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : ansible-core
-Version  : 2.15.1
-Release  : 39
-URL      : https://github.com/ansible/ansible/archive/v2.15.1/ansible-2.15.1.tar.gz
-Source0  : https://github.com/ansible/ansible/archive/v2.15.1/ansible-2.15.1.tar.gz
+Version  : 2.15.2
+Release  : 40
+URL      : https://github.com/ansible/ansible/archive/v2.15.2/ansible-2.15.2.tar.gz
+Source0  : https://github.com/ansible/ansible/archive/v2.15.2/ansible-2.15.2.tar.gz
 Summary  : Radically simple IT automation
 Group    : Development/Tools
 License  : Apache-2.0 GPL-3.0 MIT Python-2.0
@@ -72,10 +72,10 @@ python3 components for the ansible-core package.
 
 
 %prep
-%setup -q -n ansible-2.15.1
-cd %{_builddir}/ansible-2.15.1
+%setup -q -n ansible-2.15.2
+cd %{_builddir}/ansible-2.15.2
 pushd ..
-cp -a ansible-2.15.1 buildavx2
+cp -a ansible-2.15.2 buildavx2
 popd
 
 %build
@@ -83,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687295441
+export SOURCE_DATE_EPOCH=1689689504
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
