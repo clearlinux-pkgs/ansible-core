@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : ansible-core
-Version  : 2.15.2
-Release  : 40
-URL      : https://github.com/ansible/ansible/archive/v2.15.2/ansible-2.15.2.tar.gz
-Source0  : https://github.com/ansible/ansible/archive/v2.15.2/ansible-2.15.2.tar.gz
+Version  : 2.15.3
+Release  : 41
+URL      : https://github.com/ansible/ansible/archive/v2.15.3/ansible-2.15.3.tar.gz
+Source0  : https://github.com/ansible/ansible/archive/v2.15.3/ansible-2.15.3.tar.gz
 Summary  : Radically simple IT automation
 Group    : Development/Tools
 License  : Apache-2.0 GPL-3.0 MIT Python-2.0
@@ -28,7 +28,14 @@ BuildRequires : pypi(setuptools)
 %define debug_package %{nil}
 
 %description
-|PyPI version| |Docs badge| |Chat badge| |Build Status| |Code Of Conduct| |Mailing Lists| |License| |CII Best Practices|
+[![PyPI version](https://img.shields.io/pypi/v/ansible-core.svg)](https://pypi.org/project/ansible-core)
+[![Docs badge](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://docs.ansible.com/ansible/latest/)
+[![Chat badge](https://img.shields.io/badge/chat-IRC-brightgreen.svg)](https://docs.ansible.com/ansible/latest/community/communication.html)
+[![Build Status](https://dev.azure.com/ansible/ansible/_apis/build/status/CI?branchName=devel)](https://dev.azure.com/ansible/ansible/_build/latest?definitionId=20&branchName=devel)
+[![Ansible Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-Ansible-silver.svg)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
+[![Ansible mailing lists](https://img.shields.io/badge/mailing%20lists-Ansible-orange.svg)](https://docs.ansible.com/ansible/latest/community/communication.html#mailing-list-information)
+[![Repository License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](COPYING)
+[![Ansible CII Best Practices certification](https://bestpractices.coreinfrastructure.org/projects/2372/badge)](https://bestpractices.coreinfrastructure.org/projects/2372)
 
 %package bin
 Summary: bin components for the ansible-core package.
@@ -72,10 +79,10 @@ python3 components for the ansible-core package.
 
 
 %prep
-%setup -q -n ansible-2.15.2
-cd %{_builddir}/ansible-2.15.2
+%setup -q -n ansible-2.15.3
+cd %{_builddir}/ansible-2.15.3
 pushd ..
-cp -a ansible-2.15.2 buildavx2
+cp -a ansible-2.15.3 buildavx2
 popd
 
 %build
@@ -83,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689689504
+export SOURCE_DATE_EPOCH=1692056604
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
