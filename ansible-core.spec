@@ -7,7 +7,7 @@
 #
 Name     : ansible-core
 Version  : 2.16.1
-Release  : 46
+Release  : 47
 URL      : https://github.com/ansible/ansible/archive/v2.16.1/ansible-2.16.1.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.16.1/ansible-2.16.1.tar.gz
 Summary  : Radically simple IT automation
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701823091
+export SOURCE_DATE_EPOCH=1701933578
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
