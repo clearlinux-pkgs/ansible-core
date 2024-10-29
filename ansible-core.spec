@@ -7,7 +7,7 @@
 #
 Name     : ansible-core
 Version  : 2.17.5
-Release  : 58
+Release  : 59
 URL      : https://github.com/ansible/ansible/archive/v2.17.5/ansible-2.17.5.tar.gz
 Source0  : https://github.com/ansible/ansible/archive/v2.17.5/ansible-2.17.5.tar.gz
 Summary  : Radically simple IT automation
