@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : ansible-core
-Version  : 2.18.6
-Release  : 69
-URL      : https://github.com/ansible/ansible/archive/v2.18.6/ansible-2.18.6.tar.gz
-Source0  : https://github.com/ansible/ansible/archive/v2.18.6/ansible-2.18.6.tar.gz
+Version  : 2.18.7
+Release  : 70
+URL      : https://github.com/ansible/ansible/archive/v2.18.7/ansible-2.18.7.tar.gz
+Source0  : https://github.com/ansible/ansible/archive/v2.18.7/ansible-2.18.7.tar.gz
 Summary  : Radically simple IT automation
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause GPL-3.0 MIT Python-2.0
@@ -82,10 +82,10 @@ python3 components for the ansible-core package.
 
 
 %prep
-%setup -q -n ansible-2.18.6
-cd %{_builddir}/ansible-2.18.6
+%setup -q -n ansible-2.18.7
+cd %{_builddir}/ansible-2.18.7
 pushd ..
-cp -a ansible-2.18.6 buildavx2
+cp -a ansible-2.18.7 buildavx2
 popd
 
 %build
@@ -93,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1748532900
+export SOURCE_DATE_EPOCH=1752618061
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
